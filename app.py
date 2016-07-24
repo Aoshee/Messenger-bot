@@ -41,8 +41,8 @@ def webook():
                     send_message(sender_id, "got it, thanks!")
                     if message_text == "Hello":
                         send_message(sender_id, "Please enter the UID facebook: ")
-                               phone = loginFacebook.getInfoPhone(message_text)
-                               send_message(sender_id, phone)
+                        phone = loginFacebook.getInfoPhone(message_text)
+                        send_message(sender_id, phone)
 
 
                 if messaging_event.get("delivery"):  # delivery confirmation
