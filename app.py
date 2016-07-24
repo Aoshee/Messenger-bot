@@ -40,12 +40,12 @@ def webook():
                     message_text = messaging_event["message"]["text"]  # the message's text
                     if message_text == "Hello":
                         send_message(sender_id, "Please enter the UID facebook: ")
-                            uid = message_text
-                            if uid is not None:
-                                send_message(sender_id, "Please type 1: Get Phone\n2: Get Email")
-                                if message_text == "1":
-                                    phone = loginFacebook.getInfoPhone(uid)
-                                    send_message(sender_id, phone)
+                    if message_text is not None:
+                        uid = message_text
+                        send_message(sender_id, "Please type 1: Get Phone\n2: Get Email")
+                    if message_text == "1":
+                        phone = loginFacebook.getInfoPhone(uid)
+                        send_message(sender_id, phone)
 
                     send_message(sender_id, "got it, thanks!")
 
