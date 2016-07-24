@@ -24,6 +24,6 @@ def getInfoPhone(uid):
        print "ok"
 
    page_source = BeautifulSoup(data2, "lxml")
-   num in page_source.findAll('span', attrs={'dir': 'ltr'})
+   num = page_source.findAll('span', attrs={'dir': 'ltr'})
    phone = re.sub(r'\D', "", str(num))
    return phone
