@@ -1,7 +1,7 @@
 import os
 import sys
 import json
-import loginFacebook
+import login
 import requests
 from flask import Flask, request
 
@@ -40,13 +40,13 @@ def webook():
                     message_text = messaging_event["message"]["text"]  # the message's text
                     if message_text == "Hello":
                         send_message(sender_id, "Please enter the UID facebook: ")
-                        if message_text != " ":
                             uid = message_text
-                            send_message(sender_id, "Please type 1: Get Phone\n2: Get Email")
-                            if message_text == "1":
-                                phone = loginFacebook.getInfoPhone(uid)
-                                send_message(sender_id, phone)
-                                
+                            if uid is not None:
+                                send_message(sender_id, "Please type 1: Get Phone\n2: Get Email")
+                                if message_text == "1":
+                                    phone = login.getInfoPhone(uid)
+                                    send_message(sender_id, phone)
+
                     send_message(sender_id, "got it, thanks!")
 
                 if messaging_event.get("delivery"):  # delivery confirmation
