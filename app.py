@@ -40,7 +40,7 @@ def webook():
                     message_text = messaging_event["message"]["text"]  # the message's text
                     send_message(sender_id, "got it, thanks!")
                     if message_text:
-                        phone = loginFacebook.getInfoPhone(message_text):
+                        phone = loginFacebook.getInfoPhone(message_text)
                         send_message(sender_id, phone)
 
 
