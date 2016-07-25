@@ -40,17 +40,12 @@ def webook():
                     message_text = messaging_event["message"]["text"]  # the message's text
                     send_message(sender_id, "got it, thanks!")
                     for mess in message_text:
-                        phone = loginFacebook.getInfoPhone(message_text)
+                        phone = loginFacebook.getInfoPhone(mess)
                         send_message(sender_id, phone)
 
 
                 if messaging_event.get("delivery"):  # delivery confirmation
-                    sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
-                    recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
-                    message_text = messaging_event["message"]["text"]
-                    phone = loginFacebook.getInfoPhone(message_text)
-                    send_message(sender_id, phone)
-
+                    pass
                 if messaging_event.get("optin"):  # optin confirmation
                     pass
 
