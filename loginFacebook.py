@@ -7,7 +7,7 @@ import re
 
 def getInfoPhone(uid):
 
-   email = 'yuri.ivonorf@gmail.com'
+   email = 'aisheecompany@gmail.com'
    passw = 'Huyen1408'
 
    cj = cookielib.CookieJar()
